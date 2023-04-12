@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <!-- <h1 style="font-size:3vw;" id="page_header">Lightbulb Calculator </h1> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- <script type="module" src="Lightbulb.js"></script> -->
+    <script src="LightbulbCalc.js"></script>
+  
+    <title>
+      Ecoillumination
+    </title>
+  </head>
+
+  
+  <body>
+
+    <nav class="navbar-light bg-light navbar navbar-expand-sm">
+    <!-- Add the <a> below: -->
+    <a class = "navbar-brand"><img src = "images/lightbulbIMG.jpg" alt = "LightbulbLogo" height="30"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Make the follow elements into a nav component: -->
+      <ul class = "navbar-nav">
+        <li class = "nav-item">
+          <a class = "nav-link" href="tester.html">Home </a>
+        </li>
+        <li class = "nav-item active">
+          <a class = "nav-link" href="#">Calculator<span class="sr-only">(current)</span></a>
+        </li>
+        <li class = "nav-item">
+          <a class = "nav-link" href="about.html">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+      <div class="container-fluid">
+
+        <h1 class = "bg-success font-weight-bold text-uppercase"style = "text-align: center;">Ecoillumination</h1> 
+        <h4 class = "bg-success text-center">Lighting the Way Since 2021</h4> 
+
+        <div class="row">
+        <div class="col-auto">
+          <h1>Lightbulb Calculator</h1>  
+        </div>
+      </div>
+       
+
+    <h3 style="font-size:2vw;"> Fill In the fields below to get an estimate for how much money you can save by switching lightbulbs <br>(All information should be written on lightbulb packaging)</h3>
+
+
+    <form onsubmit="findAlternatives()"  > 
+      <img src = "images/lightbulbIMG.jpg" alt = "Lightbulb" style = "float:right; width:40%; height:60%;">
+
+      <label for="Quantity" id="QuantityLabel" style="font-size:1.7vw;">Quantity of bulbs (1-500) </label>
+      <input type= "text" id = "QuantityForm" name="Quantity" style="font-size:1.5vw;"> <br>
+
+      <label for="Wattage" id="WattageLabel" style="font-size:1.7vw;">Wattage (In Watts per bulb) </label>
+      <input type="text" id="WattageForm" name="wattage" style="font-size:1.5vw;"> <br>
+
+      <label for="Luminage" id="LuminageLabel" style="font-size:1.7vw;">Luminage (In Lumens) </label>
+      <input type= "text" id = "LuminageForm" name="Luminage" style="font-size:1.5vw;"> <br>
+
+      <label for="cost" id="CostLabel" style="font-size:1.7vw;">Cost of Lightbulb (in USD)</label>
+      <input type="text" id="CostForm" name="cost" style="font-size:1.5vw;"> <br>
+      
+      <label for="Lifespan" id="LifespanLabel" style="font-size:1.7vw;">Average Lifespan (In Hours of Use)</label>
+      <input type= "text" id="LifespanForm" name="Lifespan" style="font-size:1.5vw;"> <br>
+    
+      <label for="frosted" style="font-size:1.7vw;">Is your bulb frosted?:</label>
+      <select name="frosted" id="frosted" style="font-size:1.5vw;">
+      <option value="frosted" selected>frosted</option>
+      <option value="not frosted">not frosted</option>
+      </select><br>    
+
+      <label for="shape" style="font-size:1.7vw;">Select a Shape:</label>
+      <select name="shape" id="shape" style="font-size:1.5vw;">
+      <option value="A" selected>A</option>
+      <option value="B">B</option>
+      <option value="C" >C</option>
+      <option value="D" >D</option>
+      <option value="E">E</option>
+      <option value="F" >F</option>
+      <option value="G" >G</option>
+      <option value="R">R</option>
+      <option value="S" >S</option>
+      <option value="T" >T</option>
+      <option value="AR">AR</option>
+      <option value="BR" >BR</option>
+      <option value="BT" >BT</option>
+      <option value="CA">CA</option>
+      <option value="ED" >ED</option>
+      <option value="MR" >MR</option>
+      <option value="PS">PS</option>
+      <option value="RP">RP</option>
+      <option value="PAR">PAR</option>
+      <option value="Prism">Prism</option>
+      <option value="Linear Fluorescents">Linear Fluorescents</option>
+      <option value="Compact Fluorescent Coils">Compact Fluorescent Coils</option>
+      </select><br>
+
+      <label for="size" id="SizeLabel" style="font-size:1.7vw;">Size of Lightbulb</label>
+      <input type="text" id="SizeForm" name="size" style="font-size:1.5vw;"> <br>
+
+  <!--ADD ALL THE BASES -->
+      <label for="base" style="font-size:1.7vw;">Select a Base Type:</label>
+      <select name="base" id="base" style="font-size:1.5vw;">
+      <option value="E10" selected>E10</option>
+      <option value="E11">E11</option>
+      <option value="E12" >E12</option>
+      <option value="E14" >E14</option>
+      <option value="E17" >E17</option>
+      <option value="E26" >E26</option>
+      <option value="E27" >E27</option>
+      <option value="E39" >E39</option>
+      <option value="E40" >E40</option>
+      <option value="EX39" >EX39</option>
+      <option value="GU10" >GU10</option>
+      <option value="GU24" >GU24</option>
+
+      </select><br>
+
+      <label for="warmth" style="font-size:1.7vw;">Select Warmth:</label>
+      <select name="warmth" id="warmth" style="font-size:1.5vw;">
+      <option value="2700" selected>2700</option>
+      <option value="5000">5000</option>
+      <option value="other" >other</option>
+      </select><br>
+
+      <label for="dimmable" style="font-size:1.7vw;">Is your bulb dimmable?:</label>
+      <select name="dimmable" id="dimmable" style="font-size:1.5vw;">
+      <option value="dimmable" selected>dimmable</option>
+      <option value="not dimmable">not dimmable</option>
+      </select><br><br>   
+
+      <input class="btn btn-success" type="submit" value="Submit" id="myBtn">
+
+      <script>
+
+        class Lightbulb {
+  constructor(p, tempWatts, templumens, tempLink, tempLifespan, tShape, tSize, tBaseType, tWarmth, tFrosted, tDimmable) {
+    this.price = p; // dollars
+    this.watts = tempWatts;
+    this.lumens = templumens;
+    this.link = tempLink;
+    this.lifespan = tempLifespan; // hours
+    this.differential = 0;
+    this.shape = tShape;
+    this.size = tSize;
+    this.baseType = tBaseType;
+    this.warmth = tWarmth;
+    this.frosted = tFrosted;
+    this.dimmable = tDimmable;
+    this.ppth = ((this.price + (this.lifespan * (this.watts / 1000) * Lightbulb.pricePerkWh)) / this.lifespan) * 1000;
+  }
+
+  static pricePerkWh = 0.1155;
+
+  getLumens() {
+    return this.lumens;
+  }
+
+  setLumens(lumens) {
+    this.lumens = lumens;
+  }
+
+  getPrice() {
+    return this.price;
+  }
+
+  setPrice(price) {
+    this.price = price;
+  }
+
+  getWatts() {
+    return this.watts;
+  }
+
+  setWatts(watts) {
+    this.watts = watts;
+  }
+
+  getLink() {
+    return this.link;
+  }
+
+  setLink(link) {
+    this.link = link;
+  }
+
+  getLifespan() {
+    return this.lifespan;
+  }
+
+  setLifespan(lifespan) {
+    this.lifespan = lifespan;
+  }
+
+  getDifferential() {
+    return this.differential;
+  }
+
+  setDifferential(differential) {
+    this.differential = differential;
+  }
+
+  getPpth() {
+    return this.ppth;
+  }
+
+  setPpth(ppth) {
+    this.ppth = ppth;
+  }
+
+  getSize() {
+    return this.size;
+  }
+
+  setSize(size) {
+    this.size = size;
+  }
+
+  getBaseType() {
+    return this.baseType;
+  }
+
+  setBaseType(baseType) {
+    this.baseType = baseType;
+  }
+
+  getWarmth() {
+    return this.warmth;
+  }
+
+  setWarmth(warmth) {
+    this.warmth = warmth;
+  }
+
+  getShape() {
+    return this.shape;
+  }
+
+  setShape(shape) {
+    this.shape = shape;
+  }
+
+  getFrosted() {
+    return this.frosted;
+  }
+
+  setFrosted(frosted) {
+    this.frosted = frosted;
+  }
+
+  getDimmable() {
+    return this.dimmable;
+  }
+
+  setDimmable(dimmable) {
+    this.dimmable = dimmable;
+  }
+}
+
+        // findAlternatives();
+        printInfo();
+
+        function inputLights() {
+          const lightbulbs = [];
+          const graceChurch100 = new Lightbulb(3.4, 4, 350, "https://amzn.to/40EcgsV", 15000, "B", 10, "E12", 2700, false, true);
+          lightbulbs.push(graceChurch100);
+          const a190 = new Lightbulb(2.24, 6, 450, "https://amzn.to/3YH4Qn6",10000, "A", 19, "E26", 2700,true,true);
+          lightbulbs.push(a190);
+          const globe0 = new Lightbulb(9.38, 5.5, 500, "https://amzn.to/3ywTpUj",15000,"G",25,"E26",2700,true,true);
+          lightbulbs.push(globe0);
+          const sylvania73885 = new Lightbulb(3.85, 8.5, 800,
+              "https://shop.regencylighting.com/sylvania-73885-led8-5a19f82710yvrp.html", 11000, "A", 19, "E26", 2700,true,false);
+          lightbulbs.push(sylvania73885);
+          const geProLine = new Lightbulb(2.98, 45, 350,
+              "https://www.amazon.com/GE-Lighting-73027-310-Lumen-Floodlight/dp/B00A7OXYY8?th=1", 1500, "R", 20, "E26", 2700, true,false);
+          lightbulbs.push(geProLine);
+          const bioluzBR20 = new Lightbulb(3.75, 6, 540, "https://tinyurl.com/2p8w746j", 25000, "BR", 20,"E26", 3000,true,true);
+          lightbulbs.push(bioluzBR20);
+          const energeticSmarterLightingA19 = new Lightbulb(1.12, 5, 450, "https://tinyurl.com/yzykyva2", 15000, "A", 19, "E26", 5000,true,false);
+          lightbulbs.push(energeticSmarterLightingA19);
+          const sylvaniaLEDFlood = new Lightbulb(3.90, 5, 325, "https://tinyurl.com/mbpsm3s6", 11000, "R", 20, "E26", 2700,true,true);
+          lightbulbs.push(sylvaniaLEDFlood);
+          return lightbulbs;
+        }
+
+        // import { Lightbulb } from './Lightbulb.js';
+
+        function findAlternatives() {
+  //Get info from form to pass into constructor fro lightbulb
+  //Call lightbulb constructor
+  //create variavles for lightbulb
+  // let page_header = document.getElementById("page_header");
+  // page_header.innerHTML =  "Alternative Results";
+  
+  const current = new Lightbulb();
+  
+
+  let quantity = document.getElementById('QuantityForm').value;
+  console.log(quantity);
+
+  let wattage = document.getElementById('WattageForm').value;
+  console.log(wattage);
+
+  let luminage = document.getElementById('LuminageForm').value;
+  console.log(luminage);
+
+  let cost = document.getElementById('CostForm').value;
+  console.log(cost);
+
+  let lifespan = document.getElementById('LifespanForm').value;
+  console.log(lifespan);
+
+  let frosted = document.querySelector('#frosted').value;
+  console.log(frosted);
+
+  let shape = document.querySelector('#shape').value;
+  console.log(shape);
+
+  let size = document.getElementById('SizeForm').value;
+  console.log(size);
+
+  let base = document.querySelector('#base').value;
+  console.log(base);
+
+  let warmth = document.querySelector('#warmth').value;
+  console.log(warmth);
+
+  let dimmable = document.querySelector('#dimmable').value;
+  console.log(dimmable);
+
+  current.setWatts(wattage);
+  current.setLumens(luminage);
+  current.setPrice(cost);
+  current.setLifespan(lifespan);
+  current.setFrosted(frosted);
+  current.setShape(shape);
+  current.setSize(size);
+  current.setBaseType(base);
+  current.setWarmth(warmth);
+  current.setDimmable(dimmable);
+
+  let minLumens = current.getLumens() * 0.7;
+  let maxLumens = current.getLumens() * 1.3;
+
+  let lightbulbs = inputLights();
+
+  let possibilities = [];
+
+  //create an array with all the possibilities of alternative
+  for (let i = 0; i < lightbulbs.length; i++){
+    //checks for +-2 size, +- 25% lumenage, same base type, same shape, +-300K warmth, same dimmability and frost
+    if (lightbulbs[i].getShape() === current.getShape() && 
+        lightbulbs[i].getLumens() > minLumens && 
+        lightbulbs[i].getLumens() < maxLumens && 
+        Math.abs(lightbulbs[i].getSize()-current.getSize()) <= 2 && 
+        lightbulbs[i].getBaseType() === current.getBaseType() && 
+        Math.abs(lightbulbs[i].getWarmth()-current.getWarmth()) <= 300 && 
+        lightbulbs[i].getFrosted() === current.getFrosted() && 
+        lightbulbs[i].getDimmable() === current.getDimmable()) {
+      possibilities.push(lightbulbs[i]); // narrows to possibilities based on above criteria
+    }
+  } 
+  
+  //get all the differences in prices from their current lightbulb and the possibilities
+  for (let i = 0; i < possibilities.length; i++) {
+    possibilities[i].setDifferential(current.getPpth() - possibilities[i].getPpth());
+  }
+
+   return possibilities;
+}
+
+      </script>
+
+<script>
+  const modal = document.querySelector(".modal");
+const trigger = document.querySelector(".trigger");
+const closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+</script>
+
+ <button class="trigger">Click here to trigger the modal!</button>
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h1>Hello, I am a modal!</h1>
+    </div>
+</div>
+
+
+      <!-- <a id = "link" href = "tester.html" style="font-size:2vw;" class="fixed-bottom text-right"> Back to Main Page </a> -->
+    </form>
+  </div>
+  </body>
+</html>

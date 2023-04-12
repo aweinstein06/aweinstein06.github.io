@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+   <link href="./CSS_Stylesheet.css" rel="stylesheet">
+<body>
+    <header>
+      <div style="width:90.45%; height:150px; border:1px solid #000;" id="headerbox">
+      
+      <h1> <center> EcoIllumination </center></h1>
+      <h4> <center>  Lighting the Way Since 2021 </center></h6>
+    </header>
+
+<div class = "Sidebars" id="left">
+<div class = "Sidebars" id="right"> 
+  <applet code = "Java.jsp" width = "700px" height = "500px"></applet>   
+
+<h3><center><nobr>Our Purpose: </nobr></center> </h3>
+<p id = "purpose"> <nobr> We firmly believe in two things: </nobr> conserving the environment and money. We achieve these by finding lightbulbs for you that use the least amount of energy, which not only saves you money, but saves our planet. </p>
+
+<a id = "link" href="Calculator"> <nobr>Go to Our Lightbulb Calulator! </a>
+    
+
+ </body>
